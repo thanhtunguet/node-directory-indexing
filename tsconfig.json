@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": false,
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "isolatedModules": false,
+    "jsx": "react",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "paths": {
+      "assets/*": [
+        "./assets/*"
+      ],
+      "package.json": [
+        "./package.json"
+      ],
+      "src/*": [
+        "./src/*"
+      ]
+    },
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "strictNullChecks": false,
+    "target": "ES5",
+    "typeRoots": [
+      "node_modules/@types/"
+    ]
+  },
+  "exclude": [
+    "__tests__/",
+    "node_modules/",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "postcss.config.js",
+    "react-native.config.js",
+    "transformer.js",
+    "tsconfig.json"
+  ],
+  "include": [
+    "assets/",
+    "src/",
+    "package.json"
+  ]
+}
