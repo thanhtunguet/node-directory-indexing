@@ -1,13 +1,21 @@
 import chalk from 'chalk';
-import program from 'commander';
+import { Command } from 'commander';
 import * as fs from 'fs';
 import * as path from 'path';
 
+const program = new Command();
+interface Options {
+  exportType: 'all' | 'named';
+  language: 'ts' | 'js';
+}
+
 program
+  .option('-l, --language <language>', 'Source language: Javascript (js) or Typescript (ts)?', 'ts')
+  .option('-e, --export-type <exportType>', 'Export type: all (*) or named', 'named')
   .command('update <directory>')
-  .option('--language, -l <language>', 'Source language: Javascript (js) or Typescript (ts)?', 'ts')
-  .option('--export-type, -e <exportType>', 'Export type: all (*) or named', 'all')
   .action((directory: string) => {
+    const { exportType, language } = program.opts<Options>();
+    console.log(exportType, language);
     const content: string = fs
       .readdirSync(directory)
       .map((entry: string) => {
@@ -18,7 +26,7 @@ program
       })
       .map((name: string) => {
         let exportedValue: string;
-        if (program.exportType === 'all') {
+        if (exportType === 'all') {
           exportedValue = '*';
         } else {
           exportedValue = `{${name}}`;
@@ -29,7 +37,7 @@ program
       + '\n';
 
     let extension: string;
-    switch (program.language?.toLowerCase()) {
+    switch (language?.toLowerCase()) {
       case 'javascript':
       case 'js':
         extension = 'js';

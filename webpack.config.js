@@ -3,8 +3,10 @@ const nameof = require('ts-nameof');
 const webpackNodeExternals = require('webpack-node-externals');
 const sourceMapSupport = require('webpack-source-map-support');
 
+const {NODE_ENV = 'development'} = process.env;
+
 module.exports = {
-  mode: process.env.NODE_ENV || 'development',
+  mode: NODE_ENV,
   entry: {
     index: path.resolve(__dirname, 'src', 'index.ts')
   },

@@ -1,6 +1,6 @@
 {
   "name": "node-directory-indexing",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Node directory indexing",
   "main": "dist/index.js",
   "repository": "https://github.com/thanhtunguet/node-directory-indexing",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^6.2.0",
+    "commander": "^8.3.0",
     "lodash": "^4.17.20"
   },
   "devDependencies": {
